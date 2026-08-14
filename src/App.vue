@@ -261,10 +261,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <!-- Custom Subtle Cursor Glow -->
+  <!-- Custom Neon Cursor Glow -->
   <div
     v-if="cursorVisible"
-    class="pointer-events-none fixed z-[9999] hidden h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#4F46E5]/10 blur-3xl transition-opacity duration-300 dark:bg-[#818CF8]/10 md:block"
+    class="pointer-events-none fixed z-[9999] hidden h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl transition-opacity duration-300 dark:bg-fuchsia-500/20 md:block"
     :style="{
       left: `${cursorX}px`,
       top: `${cursorY}px`
@@ -274,7 +274,7 @@ onBeforeUnmount(() => {
   <!-- Application Container -->
   <div :class="{ dark: darkMode }" class="min-h-screen transition-colors duration-300 ease-in-out">
     <div
-      class="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#0F0D23] dark:text-slate-100"
+      class="min-h-screen bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-[#09090b] dark:text-zinc-100"
     >
       <!-- App Header -->
       <AppHeader :dark-mode="darkMode" @toggle-theme="toggleTheme" />
@@ -283,18 +283,18 @@ onBeforeUnmount(() => {
       <main class="mx-auto w-full max-w-[1280px] px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <!-- Page Title & Export Action -->
         <div
-          class="mb-6 flex flex-col gap-4 border-b border-slate-200/80 pb-6 dark:border-slate-800/80 sm:flex-row sm:items-center sm:justify-between"
+          class="mb-6 flex flex-col gap-4 border-b border-slate-200 pb-6 dark:border-zinc-800/80 sm:flex-row sm:items-center sm:justify-between"
         >
           <div>
             <div class="flex items-center gap-2">
-              <p class="text-xs font-bold uppercase tracking-wider text-[#4F46E5] dark:text-[#818CF8]">
+              <p class="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 dark:drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">
                 Management Dashboard
               </p>
             </div>
             <h2 class="mt-1 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
               Student Attendance
             </h2>
-            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            <p class="mt-1 text-sm text-slate-500 dark:text-zinc-400">
               Track, record, and generate logs for ongoing classes and academic sessions.
             </p>
           </div>
@@ -303,7 +303,7 @@ onBeforeUnmount(() => {
           <button
             type="button"
             @click="exportRecords"
-            class="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#4F46E5] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#4F46E5]/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#4338CA] hover:shadow-lg hover:shadow-[#4F46E5]/30 active:translate-y-0 dark:bg-[#818CF8] dark:text-[#11102A] dark:hover:bg-[#a5b4fc] sm:w-auto"
+            class="group inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-slate-800 active:translate-y-0 dark:border dark:border-cyan-500/50 dark:bg-black dark:text-cyan-300 dark:shadow-[0_0_15px_rgba(6,182,212,0.4)] dark:hover:bg-cyan-950/40 dark:hover:shadow-[0_0_25px_rgba(6,182,212,0.7)] sm:w-auto"
           >
             <svg
               class="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5"
@@ -319,102 +319,103 @@ onBeforeUnmount(() => {
           </button>
         </div>
 
-        <!-- Statistics Metric Grid -->
+        <!-- Statistics Metric Grid (Neon Colors in Dark Mode) -->
         <div class="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          <!-- Total Records -->
+          
+          <!-- Total Records Card (Cyan/Neon Blue) -->
           <div
-            class="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-[#18153A]"
+            class="group relative overflow-hidden rounded-2xl border border-cyan-200 bg-cyan-50/50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-cyan-500/50 dark:bg-black/80 dark:shadow-[0_0_20px_rgba(6,182,212,0.25)] dark:hover:border-cyan-400 dark:hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]"
           >
             <div class="flex items-center justify-between">
-              <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Total Logged</p>
-              <span class="rounded-lg bg-slate-100 p-1.5 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+              <p class="text-xs font-semibold uppercase tracking-wider text-cyan-800 dark:text-cyan-300">Total Logged</p>
+              <span class="rounded-lg bg-cyan-100 p-2 text-cyan-700 dark:bg-cyan-950/80 dark:text-cyan-400 dark:shadow-[0_0_10px_rgba(34,211,238,0.5)]">
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </span>
             </div>
-            <p class="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            <p class="mt-3 text-3xl font-black tracking-tight text-cyan-950 dark:text-cyan-300 dark:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]">
               {{ totalRecords }}
             </p>
-            <p class="mt-1 text-xs text-slate-400">Recorded students</p>
+            <p class="mt-1 text-xs font-medium text-cyan-700 dark:text-cyan-400/80">Recorded students</p>
           </div>
 
-          <!-- Present -->
+          <!-- Present Card (Emerald/Neon Green) -->
           <div
-            class="group relative overflow-hidden rounded-2xl border border-emerald-500/20 border-t-4 border-t-emerald-500 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-[#18153A]"
+            class="group relative overflow-hidden rounded-2xl border border-emerald-200 bg-emerald-50/50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-emerald-500/50 dark:bg-black/80 dark:shadow-[0_0_20px_rgba(16,185,129,0.25)] dark:hover:border-emerald-400 dark:hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
           >
             <div class="flex items-center justify-between">
-              <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Present</p>
-              <span class="rounded-lg bg-emerald-50 p-1.5 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400">
+              <p class="text-xs font-semibold uppercase tracking-wider text-emerald-800 dark:text-emerald-300">Present</p>
+              <span class="rounded-lg bg-emerald-100 p-2 text-emerald-700 dark:bg-emerald-950/80 dark:text-emerald-400 dark:shadow-[0_0_10px_rgba(52,211,153,0.5)]">
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                 </svg>
               </span>
             </div>
-            <p class="mt-3 text-3xl font-extrabold tracking-tight text-emerald-600 dark:text-emerald-400">
+            <p class="mt-3 text-3xl font-black tracking-tight text-emerald-950 dark:text-emerald-300 dark:drop-shadow-[0_0_10px_rgba(52,211,153,0.8)]">
               {{ presentRecords }}
             </p>
-            <p class="mt-1 text-xs text-slate-400">{{ presentRate }} turnout rate</p>
+            <p class="mt-1 text-xs font-medium text-emerald-700 dark:text-emerald-400/80">{{ presentRate }} turnout rate</p>
           </div>
 
-          <!-- Late -->
+          <!-- Late Card (Amber/Neon Yellow) -->
           <div
-            class="group relative overflow-hidden rounded-2xl border border-amber-500/20 border-t-4 border-t-amber-500 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-[#18153A]"
+            class="group relative overflow-hidden rounded-2xl border border-amber-200 bg-amber-50/50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-amber-500/50 dark:bg-black/80 dark:shadow-[0_0_20px_rgba(245,158,11,0.25)] dark:hover:border-amber-400 dark:hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]"
           >
             <div class="flex items-center justify-between">
-              <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Late</p>
-              <span class="rounded-lg bg-amber-50 p-1.5 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400">
+              <p class="text-xs font-semibold uppercase tracking-wider text-amber-800 dark:text-amber-300">Late</p>
+              <span class="rounded-lg bg-amber-100 p-2 text-amber-700 dark:bg-amber-950/80 dark:text-amber-400 dark:shadow-[0_0_10px_rgba(251,191,36,0.5)]">
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </span>
             </div>
-            <p class="mt-3 text-3xl font-extrabold tracking-tight text-amber-600 dark:text-amber-400">
+            <p class="mt-3 text-3xl font-black tracking-tight text-amber-950 dark:text-amber-300 dark:drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]">
               {{ lateRecords }}
             </p>
-            <p class="mt-1 text-xs text-slate-400">Requires review</p>
+            <p class="mt-1 text-xs font-medium text-amber-700 dark:text-amber-400/80">Requires review</p>
           </div>
 
-          <!-- Absent -->
+          <!-- Absent Card (Rose/Neon Pink) -->
           <div
-            class="group relative overflow-hidden rounded-2xl border border-rose-500/20 border-t-4 border-t-rose-500 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-[#18153A]"
+            class="group relative overflow-hidden rounded-2xl border border-rose-200 bg-rose-50/50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-pink-500/50 dark:bg-black/80 dark:shadow-[0_0_20px_rgba(236,72,153,0.25)] dark:hover:border-pink-400 dark:hover:shadow-[0_0_30px_rgba(236,72,153,0.5)]"
           >
             <div class="flex items-center justify-between">
-              <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Absent</p>
-              <span class="rounded-lg bg-rose-50 p-1.5 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400">
+              <p class="text-xs font-semibold uppercase tracking-wider text-rose-800 dark:text-pink-300">Absent</p>
+              <span class="rounded-lg bg-rose-100 p-2 text-rose-700 dark:bg-pink-950/80 dark:text-pink-400 dark:shadow-[0_0_10px_rgba(244,114,182,0.5)]">
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </span>
             </div>
-            <p class="mt-3 text-3xl font-extrabold tracking-tight text-rose-600 dark:text-rose-400">
+            <p class="mt-3 text-3xl font-black tracking-tight text-rose-950 dark:text-pink-300 dark:drop-shadow-[0_0_10px_rgba(244,114,182,0.8)]">
               {{ absentRecords }}
             </p>
-            <p class="mt-1 text-xs text-slate-400">Unexcused missing</p>
+            <p class="mt-1 text-xs font-medium text-rose-700 dark:text-pink-400/80">Unexcused missing</p>
           </div>
 
-          <!-- Excused -->
+          <!-- Excused Card (Fuchsia/Neon Purple) -->
           <div
-            class="group relative overflow-hidden rounded-2xl border border-sky-500/20 border-t-4 border-t-sky-500 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:bg-[#18153A] col-span-2 sm:col-span-1"
+            class="col-span-2 group relative overflow-hidden rounded-2xl border border-fuchsia-200 bg-fuchsia-50/50 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-fuchsia-500/50 dark:bg-black/80 dark:shadow-[0_0_20px_rgba(217,70,239,0.25)] dark:hover:border-fuchsia-400 dark:hover:shadow-[0_0_30px_rgba(217,70,239,0.5)] sm:col-span-1"
           >
             <div class="flex items-center justify-between">
-              <p class="text-xs font-medium text-slate-500 dark:text-slate-400">Excused</p>
-              <span class="rounded-lg bg-sky-50 p-1.5 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400">
+              <p class="text-xs font-semibold uppercase tracking-wider text-fuchsia-800 dark:text-fuchsia-300">Excused</p>
+              <span class="rounded-lg bg-fuchsia-100 p-2 text-fuchsia-700 dark:bg-fuchsia-950/80 dark:text-fuchsia-400 dark:shadow-[0_0_10px_rgba(232,121,249,0.5)]">
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </span>
             </div>
-            <p class="mt-3 text-3xl font-extrabold tracking-tight text-sky-600 dark:text-sky-400">
+            <p class="mt-3 text-3xl font-black tracking-tight text-fuchsia-950 dark:text-fuchsia-300 dark:drop-shadow-[0_0_10px_rgba(232,121,249,0.8)]">
               {{ excusedRecords }}
             </p>
-            <p class="mt-1 text-xs text-slate-400">Permitted absences</p>
+            <p class="mt-1 text-xs font-medium text-fuchsia-700 dark:text-fuchsia-400/80">Permitted absences</p>
           </div>
         </div>
 
         <!-- Attendance Panel Container -->
         <div
-          class="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm dark:border-slate-800 dark:bg-[#18153A]"
+          class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-zinc-800/80 dark:bg-zinc-900/90 dark:shadow-[0_0_30px_rgba(0,0,0,0.8)]"
         >
           <AttendanceForm
             :editing-record="editingRecord"
@@ -446,14 +447,14 @@ onBeforeUnmount(() => {
       >
         <div
           v-if="showDeleteModal"
-          class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-md"
+          class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md"
           @click.self="cancelDelete"
         >
           <div
-            class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-slate-800 dark:bg-[#18153A]"
+            class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl dark:border-pink-500/40 dark:bg-zinc-950 dark:shadow-[0_0_30px_rgba(236,72,153,0.3)]"
           >
             <!-- Warning Icon Header -->
-            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-rose-100 text-rose-600 dark:bg-rose-950/80 dark:text-rose-400">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-rose-100 text-rose-600 dark:bg-pink-950/80 dark:text-pink-400 dark:shadow-[0_0_15px_rgba(236,72,153,0.6)]">
               <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
@@ -464,7 +465,7 @@ onBeforeUnmount(() => {
               <h3 class="text-lg font-bold text-slate-900 dark:text-white">
                 Delete Attendance Record
               </h3>
-              <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400">
+              <p class="mt-1.5 text-sm text-slate-500 dark:text-zinc-400">
                 Are you sure you want to remove this record? This action is permanent and cannot be undone.
               </p>
             </div>
@@ -472,33 +473,23 @@ onBeforeUnmount(() => {
             <!-- Record Details -->
             <div
               v-if="recordToDelete"
-              class="mt-4 rounded-xl border border-slate-200/80 bg-slate-50 p-3.5 dark:border-slate-800 dark:bg-[#11102A]"
+              class="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-3.5 dark:border-zinc-800 dark:bg-black/60"
             >
               <p class="text-sm font-bold text-slate-900 dark:text-white">
                 {{ recordToDelete.studentName }}
               </p>
-              <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+              <p class="mt-0.5 text-xs text-slate-500 dark:text-zinc-400">
                 Student ID: {{ recordToDelete.studentNumber }}
               </p>
 
-              <div class="mt-2 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
-                <span class="rounded bg-slate-200/70 px-2 py-0.5 dark:bg-slate-800">
+              <div class="mt-2 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-600 dark:text-zinc-300">
+                <span class="rounded bg-slate-200 px-2 py-0.5 dark:bg-zinc-800">
                   {{ recordToDelete.section }}
                 </span>
                 <span>•</span>
                 <span>{{ recordToDelete.date }}</span>
                 <span>•</span>
-                <span
-                  :class="
-                    recordToDelete.status === 'Present'
-                      ? 'text-emerald-600 dark:text-emerald-400'
-                      : recordToDelete.status === 'Late'
-                      ? 'text-amber-600 dark:text-amber-400'
-                      : recordToDelete.status === 'Excused'
-                      ? 'text-sky-600 dark:text-sky-400'
-                      : 'text-rose-600 dark:text-rose-400'
-                  "
-                >
+                <span class="font-bold text-slate-900 dark:text-cyan-400">
                   {{ recordToDelete.status }}
                 </span>
               </div>
@@ -509,14 +500,14 @@ onBeforeUnmount(() => {
               <button
                 type="button"
                 @click="cancelDelete"
-                class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition-all duration-150 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 sm:w-auto"
+                class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition-all duration-150 hover:bg-slate-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800 sm:w-auto"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 @click="confirmDelete"
-                class="w-full rounded-xl bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-rose-700 active:scale-[0.98] sm:w-auto"
+                class="w-full rounded-xl bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-rose-500 active:scale-[0.98] dark:border dark:border-pink-500 dark:bg-pink-600 dark:shadow-[0_0_15px_rgba(236,72,153,0.5)] dark:hover:bg-pink-500 sm:w-auto"
               >
                 Delete Record
               </button>
@@ -536,34 +527,24 @@ onBeforeUnmount(() => {
       >
         <div
           v-if="notification.show"
-          class="fixed bottom-5 right-5 z-[60] w-[calc(100%-2.5rem)] max-w-sm rounded-2xl border p-4 shadow-xl backdrop-blur-md transition-all duration-300 sm:bottom-6 sm:right-6"
-          :class="
-            notification.type === 'error'
-              ? 'border-rose-200 bg-white/95 text-rose-900 dark:border-rose-900/60 dark:bg-[#18153A]/95 dark:text-rose-200'
-              : 'border-slate-200 bg-white/95 text-slate-900 dark:border-slate-800 dark:bg-[#18153A]/95 dark:text-white'
-          "
+          class="fixed bottom-5 right-5 z-[60] w-[calc(100%-2.5rem)] max-w-sm rounded-2xl border border-slate-200 bg-white/95 p-4 text-slate-900 shadow-xl backdrop-blur-md transition-all duration-300 dark:border-cyan-500/50 dark:bg-black/90 dark:text-white dark:shadow-[0_0_20px_rgba(6,182,212,0.4)] sm:bottom-6 sm:right-6"
         >
           <div class="flex items-start gap-3">
             <!-- Icon -->
             <div
-              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
-              :class="
-                notification.type === 'error'
-                  ? 'bg-rose-100 text-rose-600 dark:bg-rose-950 dark:text-rose-400'
-                  : 'bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400'
-              "
+              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-900 dark:bg-cyan-950 dark:text-cyan-300 dark:shadow-[0_0_10px_rgba(34,211,238,0.5)]"
             >
-              <svg v-if="notification.type === 'error'" class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg v-if="notification.type === 'error'" class="h-5 w-5 text-rose-500 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <svg v-else class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg v-else class="h-5 w-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
 
             <!-- Text Content -->
             <div class="min-w-0 flex-1">
-              <p class="text-xs font-bold uppercase tracking-wider opacity-60">
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-cyan-400">
                 {{ notification.type === 'error' ? 'Error' : 'Success' }}
               </p>
               <p class="mt-0.5 text-sm font-medium leading-snug">
@@ -575,7 +556,7 @@ onBeforeUnmount(() => {
             <button
               type="button"
               @click="notification.show = false"
-              class="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200"
+              class="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-zinc-200"
               aria-label="Close notification"
             >
               <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

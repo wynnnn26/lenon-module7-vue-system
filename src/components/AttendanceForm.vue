@@ -125,19 +125,19 @@ function cancelEdit() {
   ========================================================================= -->
   <div
     v-if="editingRecord"
-    class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm transition-all duration-300 dark:bg-black/80"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm transition-all duration-300 dark:bg-black/85"
     @click.self="cancelEdit"
   >
     <div
-      class="w-full max-w-2xl rounded-2xl border border-[#4F46E5]/20 bg-white p-6 shadow-2xl transition-all duration-300 dark:border-[#818CF8]/30 dark:bg-[#11102A] dark:shadow-indigo-950/50"
+      class="w-full max-w-2xl rounded-2xl border border-black/10 bg-white p-6 shadow-2xl transition-all duration-300 dark:border-white/10 dark:bg-black dark:shadow-neutral-900/50"
     >
       <!-- Modal Header -->
-      <div class="mb-5 flex items-center justify-between border-b border-[#4F46E5]/10 pb-3 transition-colors duration-300 dark:border-[#818CF8]/20">
+      <div class="mb-5 flex items-center justify-between border-b border-black/10 pb-3 transition-colors duration-300 dark:border-white/10">
         <div>
-          <h3 class="text-lg font-bold text-[#1E1B4B] transition-colors duration-300 dark:text-white">
+          <h3 class="text-lg font-bold text-black transition-colors duration-300 dark:text-white">
             Edit Student Record
           </h3>
-          <p class="text-xs text-[#1E1B4B]/60 transition-colors duration-300 dark:text-white/60">
+          <p class="text-xs text-neutral-600 transition-colors duration-300 dark:text-neutral-400">
             Update the student's attendance details below.
           </p>
         </div>
@@ -146,7 +146,7 @@ function cancelEdit() {
         <button
           type="button"
           @click="cancelEdit"
-          class="rounded-lg p-1.5 text-[#1E1B4B]/50 transition-colors duration-300 hover:bg-[#4F46E5]/10 hover:text-[#1E1B4B] dark:text-white/50 dark:hover:bg-[#818CF8]/20 dark:hover:text-white"
+          class="rounded-lg p-1.5 text-neutral-500 transition-colors duration-300 hover:bg-black/5 hover:text-black dark:text-neutral-400 dark:hover:bg-white/10 dark:hover:text-white"
         >
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -158,60 +158,60 @@ function cancelEdit() {
       <form @submit.prevent="submitForm" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <!-- Student Number -->
         <div>
-          <label class="mb-1 block text-xs font-semibold text-[#1E1B4B]/80 transition-colors duration-300 dark:text-white/80">
+          <label class="mb-1 block text-xs font-semibold text-neutral-800 transition-colors duration-300 dark:text-neutral-200">
             Student Number
           </label>
           <input
             v-model="studentNumber"
             type="text"
-            class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 placeholder:text-[#1E1B4B]/40 hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#1E1B4B] dark:text-white dark:placeholder:text-white/40 dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+            class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 placeholder:text-neutral-400 hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:placeholder:text-neutral-500 dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
           />
         </div>
 
         <!-- Student Name -->
         <div>
-          <label class="mb-1 block text-xs font-semibold text-[#1E1B4B]/80 transition-colors duration-300 dark:text-white/80">
+          <label class="mb-1 block text-xs font-semibold text-neutral-800 transition-colors duration-300 dark:text-neutral-200">
             Student Name
           </label>
           <input
             v-model="studentName"
             type="text"
-            class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 placeholder:text-[#1E1B4B]/40 hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#1E1B4B] dark:text-white dark:placeholder:text-white/40 dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+            class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 placeholder:text-neutral-400 hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:placeholder:text-neutral-500 dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
           />
         </div>
 
         <!-- Section -->
         <div>
-          <label class="mb-1 block text-xs font-semibold text-[#1E1B4B]/80 transition-colors duration-300 dark:text-white/80">
+          <label class="mb-1 block text-xs font-semibold text-neutral-800 transition-colors duration-300 dark:text-neutral-200">
             Section
           </label>
           <input
             v-model="section"
             type="text"
-            class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 placeholder:text-[#1E1B4B]/40 hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#1E1B4B] dark:text-white dark:placeholder:text-white/40 dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+            class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 placeholder:text-neutral-400 hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:placeholder:text-neutral-500 dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
           />
         </div>
 
         <!-- Date -->
         <div>
-          <label class="mb-1 block text-xs font-semibold text-[#1E1B4B]/80 transition-colors duration-300 dark:text-white/80">
+          <label class="mb-1 block text-xs font-semibold text-neutral-800 transition-colors duration-300 dark:text-neutral-200">
             Date
           </label>
           <input
             v-model="date"
             type="date"
-            class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#1E1B4B] dark:text-white dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+            class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
           />
         </div>
 
         <!-- Status -->
         <div class="sm:col-span-2">
-          <label class="mb-1 block text-xs font-semibold text-[#1E1B4B]/80 transition-colors duration-300 dark:text-white/80">
+          <label class="mb-1 block text-xs font-semibold text-neutral-800 transition-colors duration-300 dark:text-neutral-200">
             Status
           </label>
           <select
             v-model="status"
-            class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#1E1B4B] dark:text-white dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+            class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
           >
             <option value="Present">Present</option>
             <option value="Late">Late</option>
@@ -225,13 +225,13 @@ function cancelEdit() {
           <button
             type="button"
             @click="cancelEdit"
-            class="rounded-xl border border-[#4F46E5]/20 px-4 py-2.5 text-sm font-semibold text-[#1E1B4B] transition-all duration-300 hover:bg-[#818CF8]/10 dark:border-[#818CF8]/20 dark:text-white dark:hover:bg-[#818CF8]/10"
+            class="rounded-xl border border-neutral-300 px-4 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-neutral-100 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
           >
             Cancel
           </button>
           <button
             type="submit"
-            class="rounded-xl bg-[#4F46E5] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#4F46E5]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4338CA] hover:shadow-lg dark:bg-[#818CF8] dark:text-[#1E1B4B] dark:shadow-[#818CF8]/20 dark:hover:bg-[#A5B4FC]"
+            class="rounded-xl bg-black px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
           >
             Save Changes
           </button>
@@ -245,62 +245,62 @@ function cancelEdit() {
   ========================================================================= -->
   <div
     v-if="!editingRecord"
-    class="border-b border-[#4F46E5]/10 bg-white p-4 transition-all duration-300 ease-out dark:border-[#818CF8]/20 dark:bg-[#1E1B4B] sm:p-5"
+    class="border-b border-neutral-200 bg-white p-4 transition-all duration-300 ease-out dark:border-neutral-800 dark:bg-black sm:p-5"
   >
     <div class="mb-4">
-      <h3 class="text-sm font-bold text-[#1E1B4B] transition-colors duration-300 dark:text-white sm:text-base">
+      <h3 class="text-sm font-bold text-black transition-colors duration-300 dark:text-white sm:text-base">
         Add Attendance Record
       </h3>
-      <p class="mt-0.5 text-xs text-[#1E1B4B]/60 transition-colors duration-300 dark:text-white/60">
+      <p class="mt-0.5 text-xs text-neutral-600 transition-colors duration-300 dark:text-neutral-400">
         Enter the student attendance information below.
       </p>
     </div>
 
     <form @submit.prevent="submitForm" class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-6">
       <div>
-        <label class="mb-1.5 block text-xs font-semibold text-[#1E1B4B]/80 dark:text-white/80">Student Number</label>
+        <label class="mb-1.5 block text-xs font-semibold text-neutral-800 dark:text-neutral-200">Student Number</label>
         <input
           v-model="studentNumber"
           type="text"
           placeholder="E.g. 12342026"
-          class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 ease-out placeholder:text-[#1E1B4B]/40 hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#11102A] dark:text-white dark:placeholder:text-white/40 dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+          class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 ease-out placeholder:text-neutral-400 hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:placeholder:text-neutral-500 dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
         />
       </div>
 
       <div class="sm:col-span-1 lg:col-span-2">
-        <label class="mb-1.5 block text-xs font-semibold text-[#1E1B4B]/80 dark:text-white/80">Student Name</label>
+        <label class="mb-1.5 block text-xs font-semibold text-neutral-800 dark:text-neutral-200">Student Name</label>
         <input
           v-model="studentName"
           type="text"
           placeholder="E.g. Juan Dela Cruz"
-          class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 ease-out placeholder:text-[#1E1B4B]/40 hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#11102A] dark:text-white dark:placeholder:text-white/40 dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+          class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 ease-out placeholder:text-neutral-400 hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:placeholder:text-neutral-500 dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
         />
       </div>
 
       <div>
-        <label class="mb-1.5 block text-xs font-semibold text-[#1E1B4B]/80 dark:text-white/80">Section</label>
+        <label class="mb-1.5 block text-xs font-semibold text-neutral-800 dark:text-neutral-200">Section</label>
         <input
           v-model="section"
           type="text"
           placeholder="E.g. BSCS 1Z"
-          class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 ease-out placeholder:text-[#1E1B4B]/40 hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#11102A] dark:text-white dark:placeholder:text-white/40 dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+          class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 ease-out placeholder:text-neutral-400 hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:placeholder:text-neutral-500 dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
         />
       </div>
 
       <div>
-        <label class="mb-1.5 block text-xs font-semibold text-[#1E1B4B]/80 dark:text-white/80">Date</label>
+        <label class="mb-1.5 block text-xs font-semibold text-neutral-800 dark:text-neutral-200">Date</label>
         <input
           v-model="date"
           type="date"
-          class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 ease-out hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#11102A] dark:text-white dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+          class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 ease-out hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
         />
       </div>
 
       <div>
-        <label class="mb-1.5 block text-xs font-semibold text-[#1E1B4B]/80 dark:text-white/80">Status</label>
+        <label class="mb-1.5 block text-xs font-semibold text-neutral-800 dark:text-neutral-200">Status</label>
         <select
           v-model="status"
-          class="w-full rounded-xl border border-[#4F46E5]/15 bg-[#F5F3FF] px-3 py-2.5 text-sm text-[#1E1B4B] outline-none transition-all duration-300 ease-out hover:border-[#4F46E5]/30 focus:border-[#4F46E5] focus:bg-white focus:ring-4 focus:ring-[#4F46E5]/10 dark:border-[#818CF8]/20 dark:bg-[#11102A] dark:text-white dark:hover:border-[#818CF8]/40 dark:focus:border-[#818CF8] dark:focus:bg-[#171638] dark:focus:ring-4 dark:focus:ring-[#818CF8]/10"
+          class="w-full rounded-xl border border-neutral-300 bg-neutral-50 px-3 py-2.5 text-sm text-black outline-none transition-all duration-300 ease-out hover:border-black/40 focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 dark:border-neutral-800 dark:bg-neutral-900 dark:text-white dark:hover:border-white/40 dark:focus:border-white dark:focus:bg-black dark:focus:ring-2 dark:focus:ring-white/10"
         >
           <option value="Present">Present</option>
           <option value="Late">Late</option>
@@ -312,7 +312,7 @@ function cancelEdit() {
       <div class="flex items-end gap-2 sm:col-span-2 lg:col-span-1">
         <button
           type="submit"
-          class="flex-1 rounded-xl bg-[#4F46E5] px-4 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#4F46E5]/20 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-[#4338CA] hover:shadow-lg hover:shadow-[#4F46E5]/25 active:translate-y-0 active:scale-[0.97] dark:bg-[#818CF8] dark:text-[#1E1B4B] dark:shadow-[#818CF8]/20 dark:hover:bg-[#A5B4FC] dark:hover:shadow-lg"
+          class="flex-1 rounded-xl bg-black px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-neutral-800 active:translate-y-0 active:scale-[0.97] dark:bg-white dark:text-black dark:hover:bg-neutral-200"
         >
           Add Record
         </button>
